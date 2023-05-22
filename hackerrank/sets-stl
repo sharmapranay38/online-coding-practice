@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    set<int> s;
+    cin>>n;
+    while(n){
+        int query,element;
+        cin>>query>>element;
+        if(query==1) s.insert(element);
+        else if(query==2){
+            if(s.count(element)) s.erase(element);
+        }
+        else if(query==3){
+            if(s.count(element)) cout<<"Yes"<<endl;
+            else cout<<"No"<<endl;
+        }
+        n--;
+    }
+    return 0;
+}
+
+
+
