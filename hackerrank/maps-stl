@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    map<string,int> m;
+    cin>>n;
+    while(n){
+        int query,marks;
+        string name;
+        cin>>query;
+        if(query==1){
+            cin>>name>>marks;
+            m[name]+=marks;
+        }
+        else if(query==2){
+            cin>>name;
+            m.erase(name);
+        }
+        else if(query==3){
+            cin>>name;
+            cout<<m[name]<<endl;
+        }
+        n--;
+    }
+    return 0;
+}
+
+
+
