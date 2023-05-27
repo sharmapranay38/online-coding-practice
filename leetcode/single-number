@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        for(auto e:nums){
+            if(count(nums.begin(),nums.end(),e)==1){
+                return e;
+            }
+        }
+        
+    return 0;
+    }
+};
