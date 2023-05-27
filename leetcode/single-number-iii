@@ -1,0 +1,14 @@
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        vector<int> ans;
+        map<int,int> m1;
+        for(auto e:nums) m1[e]++;
+
+        map<int,int> :: iterator it;
+        for(auto it:m1){
+            if(it.second==1) ans.push_back(it.first);
+        }
+        return ans;
+    }
+};
