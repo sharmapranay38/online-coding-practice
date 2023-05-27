@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        vector<char> v,temp;
+        // int ans = 0;
+        for(auto e:s){
+            v.push_back(e);
+        }
+        reverse(v.begin(),v.end());
+        for(auto e:v){
+            if(e==' ' && temp.size()!=0)  break;
+            else if(e==' ') continue;
+            else temp.push_back(e);
+        }
+
+
+
+
+
+
+
+        return temp.size();
+    }
+};
