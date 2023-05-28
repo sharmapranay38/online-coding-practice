@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int ans = 0;
+        for(auto e:nums){
+            if(e>=target) return ans;
+            else ans++;
+        }
+        return nums.size();
+    }
+};
