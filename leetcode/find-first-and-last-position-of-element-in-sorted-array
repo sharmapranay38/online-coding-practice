@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int first,second;
+        vector<int> ans;
+        vector<int> :: iterator it;
+
+        if(find(nums.begin(),nums.end(),target)!=nums.end()){
+            it = find(nums.begin(),nums.end(),target);
+            first = it-nums.begin();
+            
+            reverse(nums.begin(),nums.end());
+            it = find(nums.begin(),nums.end(),target);
+            second = it-nums.begin();
+            ans.push_back(first);
+            ans.push_back(nums.size()-1-second);
+        }
+
+        else{
+            first = -1;
+            second = -1;
+            ans.push_back(first);
+            ans.push_back(second);
+        }
+        
+        
+        
+       
+
+        return ans;
+    }
+};
