@@ -1,0 +1,48 @@
+class Solution {
+public:
+    int uniqueMorseRepresentations(vector<string>& words) {
+        set<string> s;
+        map<char,string> m1{
+        {'a',".-"},
+        {'b',"-..."},
+        {'c',"-.-."},
+        {'d',"-.."},
+        {'e',"."},
+        {'f',"..-."},
+        {'g',"--."},
+        {'h',"...."},
+        {'i',".."},
+        {'j',".---"},
+        {'k',"-.-"},
+        {'l',".-.."},
+        {'m',"--"},
+        {'n',"-."},
+        {'o',"---"},
+        {'p',".--."},
+        {'q',"--.-"},
+        {'r',".-."},
+        {'s',"..."},
+        {'t',"-"},
+        {'u',"..-"},
+        {'v',"...-"},
+        {'w',".--"},
+        {'x',"-..-"},
+        {'y',"-.--"},
+        {'z',"--.."}
+        };
+        string ans;
+        for(auto word:words){
+            for(auto character:word){
+                ans+=m1[character];
+            }
+            s.insert(ans);
+            ans = "";
+        }
+        return s.size();
+
+
+
+
+
+    }
+};
