@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int findFinalValue(vector<int>& nums, int original) {
+        while(1){
+            if(find(nums.begin(),nums.end(),original)==nums.end()){
+                return original;
+                break;
+            }
+            else{
+                original = original*2;
+            }
+        }
+        return 0;
+    }
+    
+};
